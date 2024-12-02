@@ -1,13 +1,20 @@
 ---
 layout: default
 permalink: /formate
+title: Unsere Lernformate
 ---
-
-# Unsere Lernformate
 
 ## Workshop
 
+Ein Workshop ist eine interaktive Lernveranstaltung, bei der die Teilnehmer aktiv in den Lernprozess eingebunden werden. Durch praktische Übungen und Diskussionen erarbeiten wir uns ein tieferes Verständnis für ein bestimmtes Thema. Workshops bieten eine hervorragende Gelegenheit, theoretisches Wissen in die Praxis umzusetzen und direktes Feedback von Experten und anderen Teilnehmern zu erhalten.
+
 ## Coding-Dojo
+
+Ein Coding-Dojo ist eine kollaborative Programmierübung, bei der wir zusammenkommen, um unsere Fähigkeiten zu verbessern und voneinander zu lernen. Wir arbeiten dabei an einem kleinen Programmierproblem, das zumeist als [Kata](https://de.wikipedia.org/wiki/Form_(Kampfkunst)) bezeichnet wird. 
+
+Unser Ziel ist dabei, durch wiederholtes Üben und den Austausch von Techniken und Best Practices die eigene Programmierkunst zu verfeinern. 
+
+* Mehr über [Coding-Dojos](https://codingdojo.org/)
 
 ## Unkonferenz
 
@@ -27,3 +34,6 @@ Es gibt ihn noch und er ist auch wertvoll: Der klassische Vortrag. In der Verans
 
 Wir bieten aber auch Vorträge im Rahmen der [rheinjug](https://rheinjug.de) an. Die rheinjug-Vorträge werden von Freiwilligen der Java User Gruppe in Düsseldorf organisiert und wir bieten seit 2006 regelmäßig Vorträge an der HHU zum Thema Softwareentwicklung an. Die rheinjug Vorträge sind nicht nur für Studierende, sondern auch für andere Interessierten zugänglich. 
 
+## Sonderformate
+
+Gelegentlich werden wir besondere Möglichkeiten zum Erwerb von Stunden anbieten. Die Ankündigung erfolgt gesondert auf der Webseite und in den Veranstaltungen.

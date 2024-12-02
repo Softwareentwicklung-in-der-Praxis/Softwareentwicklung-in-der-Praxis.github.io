@@ -34,6 +34,7 @@ include: ['_pages']
 plugins:
   - jekyll-feed
 
+future: true
 
 destination: ../output
 

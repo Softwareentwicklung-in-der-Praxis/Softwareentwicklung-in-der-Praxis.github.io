@@ -8,23 +8,27 @@
 <body>
     <div class="container">
     <header>
-        <h1>{{ site.title }}</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Startseite</a></li>
-                <li><a href="/neu">Neulinge</a></li>
-                <li><a href="/upcoming">Upcoming</a></li>
-                <li><a href="/archiv">Archiv</a></li>
-                <li><a href="/formate">Formate</a></li>
-                <li><a href="/formalia">Formalia</a></li>
-            </ul>
-        </nav>
+        <div class="row header-title-row">
+            <h1 class="h4 text-center text-muted">{{ page.title }}</h1>
+        </div>
+        <div class="nav-scroller py-1 mb-2">
+            <nav>
+                <ul class="d-flex justify-content-between">
+                    <li class="p-2 text-muted"><a href="/">Startseite</a></li>
+                    <li class="p-2 text-muted"><a href="/neu.html">Worum geht es?</a></li>
+                    <li class="p-2 text-muted"><a href="/upcoming.html">Upcoming</a></li>
+                    <li class="p-2 text-muted"><a href="/archiv.html">Archiv</a></li>
+                    <li class="p-2 text-muted"><a href="/formate.html">Formate</a></li>
+                    <li class="p-2 text-muted"><a href="/formalia.html">Leistungspunkte erwerben</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         {{content}}
     </main>
     <footer>
-        <p>&copy; 2024 Softwareentwicklung inder Praxis</p>
+        <p>&copy; 2024 Softwareentwicklung in der Praxis</p>
     </footer>
 </div>
 </body>
