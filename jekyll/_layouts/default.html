@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
+<body>
+    <div class="container">
+    <header>
+        <h1>{{ site.title }}</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Startseite</a></li>
+                <li><a href="/neu">Neulinge</a></li>
+                <li><a href="/upcoming">Upcoming</a></li>
+                <li><a href="/archiv">Archiv</a></li>
+                <li><a href="/formate">Formate</a></li>
+                <li><a href="/formalia">Formalia</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {{content}}
+    </main>
+    <footer>
+        <p>&copy; 2024 Softwareentwicklung inder Praxis</p>
+    </footer>
+</div>
+</body>
+</html>
