@@ -21,7 +21,8 @@ jobs:
 
     - name: Veranstaltungen holen
       run: |
-        pwd
+        rm -rf veranstaltungen
+        rm -rf veranstalungen.zip
         curl -L -o veranstaltungen.zip https://rheinjug.de/files/extern/veranstaltungen.zip
         unzip veranstaltungen.zip -d veranstaltungen
         ls -al 
