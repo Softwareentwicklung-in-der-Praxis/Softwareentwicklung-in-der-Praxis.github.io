@@ -21,9 +21,11 @@ jobs:
 
     - name: Veranstaltungen holen
       run: |
+        pwd
         curl -L -o veranstaltungen.zip https://rheinjug.de/files/extern/veranstaltungen.zip
         unzip veranstaltungen.zip -d veranstaltungen
-        cp veranstaltungen/veranstaltungen/* _posts/
+        ls -al 
+        cp veranstaltungen/veranstaltungen/* jekyll/_posts/
  
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
