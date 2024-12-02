@@ -18,6 +18,15 @@ jobs:
       contents: write  
     steps:
     - uses: actions/checkout@v3
+
+    - name: ZIP file herunterladen
+    run: curl -L -o veranstaltungen.zip https://rheinjug.de/files/extern/veranstaltungen.zip
+
+    - name: ZIP file auspacken
+    run: unzip veranstaltungen.zip -d veranstaltungen
+
+  - name: Veranstaltungen kopieren
+    run: cp veranstaltungen/veranstaltungen/* _posts/
  
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
