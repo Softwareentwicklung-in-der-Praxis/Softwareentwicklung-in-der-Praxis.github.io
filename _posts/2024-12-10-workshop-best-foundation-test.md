@@ -3,7 +3,7 @@ layout: post
 reihe: SEP
 date: 2024-12-10 14:55:05 +0100
 title: "Workshop: BeST Foundation: Test"
-sprecher: "Gulmariyam Yerzhanova (Accso) "
+sprecher: "Gulmariyam Yerzhanova, Accso"
 code: "SEP20241210"
 status: "upcoming"
 categories: sep event
