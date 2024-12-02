@@ -9,6 +9,8 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,6 +24,8 @@ jobs:
         cd ..
   
     - name: Deploy 🚀
+      permissions:
+        contents: write  
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: jekyll
