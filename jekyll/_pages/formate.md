@@ -14,6 +14,7 @@ Ein Coding-Dojo ist eine kollaborative Programmierübung, bei der wir zusammenko
 
 Unser Ziel ist dabei, durch wiederholtes Üben und den Austausch von Techniken und Best Practices die eigene Programmierkunst zu verfeinern. 
 
+{: .action-list}
 * Mehr über [Coding-Dojos](https://codingdojo.org/)
 
 ## Unkonferenz

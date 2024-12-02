@@ -10,6 +10,7 @@ Unsere Veranstaltung hat das Ziel, dir eine Vielzahl von Formaten anzubieten, in
 
 Neben Fachvorträgen von Expert:innen aus der Industrie gibt es Coding-Dojos, Programmierworkshops und eine Unkonferenz. 
 
+{: .action-list}
 * [Was ist ein Coding-Dojo?](/formate#coding-dojo) 
 * [Was ist eine Unkonferenz?](/formate#unkonferenz) 
 

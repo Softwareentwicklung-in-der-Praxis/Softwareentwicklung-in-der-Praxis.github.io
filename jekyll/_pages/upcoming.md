@@ -7,9 +7,7 @@ title: Unsere nächsten Veranstaltungen
 {% for post in site.posts reversed %}
 {% if post.status=="upcoming" %}
 <div>
-  <a href="{{ post.url }}">
-    <h4> {{ post.title }} ({{ post.sprecher }})</h4>
-  </a>
+  <h4> {{ post.title }} ({{ post.sprecher }})</h4>
   <div class="text-muted">
     {{post.date | date: '%d.%m.%Y'}}, {{ post.zeit }} Uhr
     <span class="badge badge-pill badge-success float-right">Demnächst</span>
