@@ -14,6 +14,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  
     steps:
     - uses: actions/checkout@v3
 
@@ -24,8 +26,6 @@ jobs:
         cd ..
   
     - name: Deploy 🚀
-      permissions:
-        contents: write  
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: jekyll
