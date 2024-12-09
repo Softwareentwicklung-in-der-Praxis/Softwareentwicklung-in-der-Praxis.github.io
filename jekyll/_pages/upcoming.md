@@ -9,7 +9,7 @@ title: Unsere nächsten Veranstaltungen
 <div>
   <h4 id="{{ post.code }}"> {{ post.title }} ({{ post.sprecher }})</h4>
   <div class="text-muted">
-    {{post.date | date: '%d.%m.%Y'}}, {{ post.zeit }} Uhr
+    {{post.date | date: '%d.%m.%Y'}} um {{ post.zeit }} Uhr, {{ post.ort }}
     <span class="badge badge-pill badge-success float-right">Demnächst</span>
   </div>
  <p>{{ post.short}}</p>
