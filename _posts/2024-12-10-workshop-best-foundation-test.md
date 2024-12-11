@@ -5,7 +5,7 @@ date: 2024-12-10 14:55:05 +0100
 title: "Workshop: BeST Foundation: Test"
 sprecher: "Gulmariyam Yerzhanova, Accso"
 code: "SEP20241210"
-status: "upcoming"
+status: "past"
 categories: sep event
 ort: "Seminarraum 25.12.02.33"
 zeit: "16:30"
