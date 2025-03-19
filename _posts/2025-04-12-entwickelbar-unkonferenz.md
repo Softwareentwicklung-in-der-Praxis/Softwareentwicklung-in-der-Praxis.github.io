@@ -1,11 +1,11 @@
 ---
 layout: post
 reihe: SEP
-date: 2024-04-12 14:55:05 +0100
+date: 2025-04-12 14:55:05 +0100
 title: "Entwickelbar Unkonferenz"
 sprecher: ""
-code: "SEP20240412"
-status: "past"
+code: "SEP20250412"
+status: "upcoming"
 categories: sep event
 ort: "Seminarräume Juridikum 1. OG"
 zeit: "09:30"
