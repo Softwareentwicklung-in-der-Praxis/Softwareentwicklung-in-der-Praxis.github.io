@@ -3,7 +3,7 @@ layout: post
 reihe: SEP
 date: 2025-06-03 14:55:05 +0100
 title: "Von der Idee zur Anwendung"
-sprecher: "Carsten Bruckhoff (Capgemini)"
+sprecher: "Carsten Bruckhoff"
 code: "SEP20250603"
 status: "upcoming"
 categories: sep event
