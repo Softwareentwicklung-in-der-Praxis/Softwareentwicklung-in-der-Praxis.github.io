@@ -5,7 +5,7 @@ date: 2025-06-03 14:55:05 +0100
 title: "Von der Idee zur Anwendung"
 sprecher: "Carsten Bruckhoff"
 code: "SEP20250603"
-status: "upcoming"
+status: "past"
 categories: sep event
 ort: "Seminarraum 25.12.01.51"
 zeit: "16:30"
