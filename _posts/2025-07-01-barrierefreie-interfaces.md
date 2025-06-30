@@ -7,7 +7,7 @@ sprecher: "Anna Maier"
 code: "SEP20250701"
 status: "upcoming"
 categories: sep event
-ort: "Seminarraum 25.12.01.51"
+ort: "Hörsaal 5D"
 zeit: "16:30"
 short: " Eine moderne Webapp berücksichtigt Nutzerbedürfnisse. Ein wichtiger Aspekt davon ist Barrierefreiheit: erst mit einem barrierefreien Interface können wir alle potentiellen Nutzer (und Kunden) erreichen. Darüber hinaus wird Barrierefreiheit auch von der Gesetzgebung gefordert. In dieser ..."
 ---
