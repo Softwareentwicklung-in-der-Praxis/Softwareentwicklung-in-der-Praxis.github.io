@@ -5,7 +5,7 @@ date: 2025-07-01 14:55:05 +0100
 title: "Barrierefreie Interfaces"
 sprecher: "Anna Maier"
 code: "SEP20250701"
-status: "upcoming"
+status: "past"
 categories: sep event
 ort: "Hörsaal 5D"
 zeit: "16:30"
