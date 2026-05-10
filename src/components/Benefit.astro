@@ -1,0 +1,42 @@
+---
+import BenefitCard from "./BenefitCard.astro";
+---
+
+<section id="benefits" class="bg-white scroll-mt-16" aria-labelledby="benefits-heading">
+    <h2 id="benefits-heading" class="sr-only">Warum teilnehmen?</h2>
+    <div class="p-6">
+        <!-- Erste Zeile: 3 Karten -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <BenefitCard emoji="🤗" title="Offen für Alle">
+                Alle Studierenden mit Interesse an der Praxis der
+                Softwareentwicklung sind willkommen und es gibt keine formellen
+                Teilnahmevoraussetzungen.
+            </BenefitCard>
+            <BenefitCard emoji="🛠️" title="Technologiewissen">
+                Lerne moderne Technologien, Tools und Frameworks kennen, die in der
+                Praxis zählen.
+            </BenefitCard>
+            <BenefitCard emoji="👨‍💻" title="Hands-on-Erfahrung">
+                Vertiefe dein Können in Coding-Dojos und Workshops – mit echten
+                Praxisaufgaben.
+            </BenefitCard>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <BenefitCard emoji="🎯" title="Karriereorientierung">
+            Erkunde verschiedene Wege in die IT-Branche – durch Vorträge und
+                persönliche Gespräche.
+            </BenefitCard>
+            <BenefitCard emoji="🗣️" title="Soft Skills verbessern">
+                Trainiere Soft Skills durch aktive Diskussionen und Präsentationen
+                in der Unkonferenz.
+            </BenefitCard>
+            <BenefitCard emoji="👨‍💻" title="Leistungspunkte">
+               	Du kannst bis zu 5 Leistungspunkte für den unbenoteten
+				Wahlpflichtbereich sammeln. Besuch beliebige Veranstaltungen und sammel Stunden.
+				Für 30 Stunden gibt es 1 LP.
+            </BenefitCard>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,35 @@
+---
+import EventCard from "./EventCard.astro";
+const res = await fetch("https://sep-backend.d.stups.hhu.de/veranstaltungen");
+const events = res.ok ? await res.json() : [];
+---
+
+<section class="my-10">
+    <h2  class="text-3xl text-center">Unsere nächsten Events</h2>
+    <div class="flex justify-center gap-6 pt-4">
+        {events.slice(0, 3).map(event => {
+            // Datum parsen und formatieren
+            let dateObj = new Date(event.datum);
+            let formattedDate = dateObj.toLocaleDateString('de-DE', {
+                day: '2-digit', month: '2-digit', year: 'numeric'
+            });
+            // Zeit ggf. aus uhrzeit oder zeit
+            let zeit = event.uhrzeit ? event.uhrzeit.slice(0,5) : (event.zeit || "");
+            // Link-Logik
+            let link = event.code && event.code.startsWith('rheinjug')
+                ? `https://rheinjug.de/veranstaltung/${event.code}`
+                : event.link;
+            return (
+                <EventCard
+                    title={event.titel}
+                    datum={formattedDate}
+                    zeit={zeit}
+                    link={link}
+                    ort={event.ort}
+                >
+          
+                </EventCard>
+            );
+        })}
+    </div>
+</section>

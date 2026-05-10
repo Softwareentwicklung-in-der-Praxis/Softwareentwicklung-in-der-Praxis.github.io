@@ -1,0 +1,188 @@
+---
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.css";
+
+// Berechnung der Leistungspunkte-Tabelle
+const stundenProPunkt = 30;
+const leistungspunkte = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
+const tabellenDaten = leistungspunkte.map((punkte) => ({
+	punkte,
+	stunden: punkte * stundenProPunkt,
+}));
+---
+
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Softwareentwicklung in der Praxis</title>
+	</head>
+	<body class="max-w-7xl mx-auto px-4 hyphens-auto" lang="de">
+		<a
+			href="#main"
+			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50"
+		>
+			Zum Hauptinhalt springen
+		</a>
+		<Navigation />
+		<main id="main" class="py-8">
+			<div class="max-w-4xl mx-auto space-y-12">
+				<header class="text-center mb-12">
+					<h1
+						class="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
+					>
+						Leistungspunkte sammeln
+					</h1>
+					<p class="text-xl text-gray-600">
+						Alle wichtigen Informationen zur Teilnahme und
+						Anrechnung
+					</p>
+				</header>
+
+				<section class="bg-white px-8 mt-8">
+					<h2 class="text-3xl font-bold text-gray-800 mb-6">
+						Wer darf teilnehmen?
+					</h2>
+
+					<p class="text-lg text-gray-700">
+						Alle Studierenden mit Interesse an der Praxis der
+						Softwareentwicklung sind willkommen und es gibt keine
+						formellen Teilnahmevoraussetzungen. In den meisten
+						Veranstaltungen wird aber angenommen, dass du bereits
+						grundlegende Programmierkenntnisse hast.
+					</p>
+				</section>
+
+				<section class="px-8 mt-8">
+					<h2 class="text-3xl font-bold text-gray-800 mb-6">
+						Welche Veranstaltungen muss ich besuchen?
+					</h2>
+					<p class="text-lg text-gray-700">
+						Du kannst dir dein Programm aus unserem Angebit frei
+						zusammenstellen und du musst auch nicht alles in einem
+						Semester erledigen. Für jede Veranstaltung werden dir,
+						je nach Zeitaufwand, Stunden gutgeschrieben, die du dann
+						in Leistungspunkte umtauschen kannst.
+					</p>
+				</section>
+
+				<section class="px-8 mt-8">
+					<h2 class="text-3xl font-bold text-gray-800 mb-6">
+						Wofür kann die Veranstaltung angerechnet werden?
+					</h2>
+					<div class="text-lg text-gray-700">
+						<p class="mt-4">
+							Im Studiengang Bachelor Informatik kann die
+							Veranstaltung bis zu 5 Leistungspunkten im
+							unbenoteten Wahlpflichbereich angerechnet werden.
+							Falls du noch in der Prüfungsordnung 2016 bist,
+							kannst du dir die Veranstaltung im Modul „Praxis-
+							und Berufsorientierung” anrechnen lassen.
+						</p>
+
+						<p class="mt-4">
+							Falls du ein anderes Fach studierst, solltest du mit
+							dem Prüfungsauschuss vorher abklären, ob die
+							Veranstaltung anrechenbar ist. Du kannst aber auf
+							jeden fall eine Bescheinigung über die Teilnahme
+							bekommen. Auf der Bescheinigung sind auch die
+							erworbenen Leistungspunkte ausgewiesen.
+						</p>
+					</div>
+				</section>
+
+
+
+				<section class="px-8 mt-8">
+					<h2 class="text-3xl font-bold text-gray-800 mb-6">
+						Wieviele Stunden bekomme ich pro Besuch einer
+						Veranstaltung?
+					</h2>
+					<div class="text-lg text-gray-700">
+						<p class="mt-4">
+							Wieviele Stunden angerechnet werden, hängt sehr von
+							der Veranstaltung ab. Ein Vortrag bei der rheinjug
+							wird meistens mit drei Stunden angerechnet, ein
+							Besuch der Entwickelbar-Unkonferenz mit zehn
+							Stunden.
+						</p>
+						<p class="mt-4">
+							Es kann im Einzelfall nach Vereinbarung auch mehr Stunden geben, wenn
+							du eine Extraarbeit erbringst, zum Beispiel in Form
+							einer schriftlichen Dokumentation einer
+							Veranstaltung.
+						</p>
+					</div>
+				</section>
+
+				<section class="px-8 mt-8">
+					<h2 class="text-3xl font-bold text-gray-800 mb-6">
+						Wie werden meine Stunden nachgehalten?
+					</h2>
+					<div class="text-lg text-gray-700">
+						<p class="mt-4">
+							Zur Zeit erfolgt die Dokumentation der Teilnahme
+							noch über Teilnehmerlisten, bis wir einen digitalen
+							Prozess eingeführt haben.
+						</p>
+					</div>
+				</section>
+
+
+								<section class="px-8 mt-8">
+					<h2 class="text-3xl font-bold text-gray-800 mb-6">
+						Wieviel Stunden muss ich pro Leistungspunkt sammeln?
+					</h2>
+					<div class="text-lg text-gray-700">
+						<p class="mt-4">
+							Das Hochschulgesetz schreibt vor, dass ein
+							Leistungspunkt in etwa einem Aufwand von 30 Stunden
+							entspricht. Wir können auch halbe Leistungspunkte
+							vergeben, wenn das gewünscht ist, dazu musst du
+							entsprechend 15 Stunden sammeln.
+						</p>
+
+						<table
+							class="border-collapse border border-gray-300 mt-4 mx-auto"
+						>
+							<thead>
+								<tr class="bg-gray-100">
+									<th
+										class="border border-gray-300 px-4 py-2 text-left"
+										>Leistungspunkte</th
+									>
+									<th
+										class="border border-gray-300 px-4 py-2 text-left"
+										>Stunden</th
+									>
+								</tr>
+							</thead>
+							<tbody>
+								{
+									tabellenDaten.map(({ punkte, stunden }) => (
+										<tr>
+											<td class="border border-gray-300 px-4 py-2">
+												{punkte}
+											</td>
+											<td class="border border-gray-300 px-4 py-2">
+												{stunden}
+											</td>
+										</tr>
+									))
+								}
+							</tbody>
+						</table>
+
+						<p class="mt-4">
+							Wir können dir auch mehr als 5 Leistungspunkte
+							bescheinigen. Für den Studiengang Informatik werden
+							aber maximal 5 Punkte angerechnet.
+						</p>
+					</div>
+				</section>
+
+			</div>
+		</main>
+	</body>
+</html>
