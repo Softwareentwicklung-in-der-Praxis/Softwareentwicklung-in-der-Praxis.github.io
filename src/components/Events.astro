@@ -1,6 +1,7 @@
 ---
 import EventCard from "./EventCard.astro";
-const res = await fetch("https://sep-backend.d.stups.hhu.de/veranstaltungen");
+const backendBase = import.meta.env.PUBLIC_API_URL || import.meta.env.VITE_PUBLIC_API_URL || process.env.PUBLIC_API_URL || "https://sep-backend.d.stups.hhu.de";
+const res = await fetch(`${backendBase.replace(/\/$/,'')}/veranstaltungen/alle`);
 const events = res.ok ? await res.json() : [];
 ---
 
