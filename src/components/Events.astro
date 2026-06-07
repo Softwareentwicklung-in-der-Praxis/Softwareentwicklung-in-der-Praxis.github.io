@@ -19,7 +19,9 @@ const events = res.ok ? await res.json() : [];
             // Link-Logik
             let link = event.code && event.code.startsWith('rheinjug')
                 ? `https://rheinjug.de/veranstaltung/${event.code}`
-                : event.link;
+                : event.code
+                    ? `/veranstaltung/${event.code}`
+                    : event.link;
             return (
                 <EventCard
                     title={event.titel}

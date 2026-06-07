@@ -1,0 +1,128 @@
+---
+import Navigation from "../../components/Navigation.astro";
+import "../../styles/global.css";
+
+const backendBase = import.meta.env.PUBLIC_API_URL || import.meta.env.VITE_PUBLIC_API_URL || process.env.PUBLIC_API_URL || "https://sep-backend.d.stups.hhu.de";
+
+export async function getStaticPaths() {
+    const base = import.meta.env.PUBLIC_API_URL || import.meta.env.VITE_PUBLIC_API_URL || process.env.PUBLIC_API_URL || "https://sep-backend.d.stups.hhu.de";
+    const res = await fetch(`${base.replace(/\/$/, '')}/veranstaltungen/alle`);
+    const events = res.ok ? await res.json() : [];
+    return events
+        .filter((event: any) => event.code && !event.code.startsWith('rheinjug'))
+        .map((event: any) => ({
+            params: { code: event.code },
+            props: { event },
+        }));
+}
+
+const { event } = Astro.props;
+
+const dateObj = new Date(event.datum);
+const formattedDate = dateObj.toLocaleDateString('de-DE', {
+    weekday: 'long', day: '2-digit', month: 'long', year: 'numeric'
+});
+const zeit = event.uhrzeit ? event.uhrzeit.slice(0, 5) : (event.zeit || "");
+const dauer = event.minutenDauer ? `${event.minutenDauer} Minuten` : null;
+
+const beschreibungParagraphen: string[] = event.beschreibung
+    ? event.beschreibung.trim().split(/\n\n+/).filter((p: string) => p.trim())
+    : [];
+
+const bioParagraphen: string[] = event.bio
+    ? event.bio.trim().split(/\n\n+/).filter((p: string) => p.trim())
+    : [];
+---
+
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{event.titel} – Softwareentwicklung in der Praxis</title>
+    </head>
+    <body class="max-w-7xl mx-auto px-4 hyphens-auto" lang="de">
+        <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">
+            Zum Hauptinhalt springen
+        </a>
+        <Navigation />
+        <main id="main" class="py-8">
+            <div class="max-w-4xl mx-auto space-y-10">
+
+                <header class="text-center mb-10">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                        {event.titel}
+                    </h1>
+                    {event.teaser && (
+                        <p class="text-xl text-gray-600 max-w-2xl mx-auto">{event.teaser}</p>
+                    )}
+                </header>
+
+                <section class="bg-fuchsia-50 rounded-2xl px-8 py-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Termin &amp; Ort</h2>
+                    <dl class="space-y-2 text-lg text-gray-700">
+                        <div class="flex gap-3">
+                            <dt class="font-semibold w-24 shrink-0">Datum</dt>
+                            <dd>{formattedDate}</dd>
+                        </div>
+                        {zeit && (
+                            <div class="flex gap-3">
+                                <dt class="font-semibold w-24 shrink-0">Uhrzeit</dt>
+                                <dd>{zeit} Uhr{dauer ? ` (${dauer})` : ''}</dd>
+                            </div>
+                        )}
+                        <div class="flex gap-3">
+                            <dt class="font-semibold w-24 shrink-0">Ort</dt>
+                            <dd>
+                                {event.location?.osm ? (
+                                    <a href={event.location.osm} target="_blank" rel="noopener noreferrer" class="underline hover:text-[#0E7393]">
+                                        {event.ort}
+                                    </a>
+                                ) : (
+                                    event.ort
+                                )}
+                            </dd>
+                        </div>
+                    </dl>
+                </section>
+
+                {beschreibungParagraphen.length > 0 && (
+                    <section class="px-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Über die Veranstaltung</h2>
+                        <div class="space-y-4 text-lg text-gray-700">
+                            {beschreibungParagraphen.map((p: string) => (
+                                <p>{p}</p>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {event.sprecher && (
+                    <section class="px-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                            {event.vortrag ? 'Sprecher:in' : 'Ansprechperson'}
+                        </h2>
+                        <p class="text-xl font-semibold text-gray-800 mb-3">{event.sprecher}</p>
+                        {bioParagraphen.length > 0 && (
+                            <div class="space-y-4 text-lg text-gray-700">
+                                {bioParagraphen.map((p: string) => (
+                                    <p>{p}</p>
+                                ))}
+                            </div>
+                        )}
+                    </section>
+                )}
+
+                <div class="px-8 pb-8">
+                    <a href="/" class="inline-flex items-center text-[#0E7393] hover:underline font-semibold">
+                        ← Zurück zur Startseite
+                    </a>
+                </div>
+
+            </div>
+        </main>
+    </body>
+</html>
